@@ -1,6 +1,6 @@
 <?php
 	
-	iclude("...Chatbot/phpConnection.php");
+	iclude("phpConnection.php");
 
 	$method = $_SERVER['REQUEST_METHOD'];
 
