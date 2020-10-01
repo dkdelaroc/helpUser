@@ -22,7 +22,7 @@ if($method == 'POST'){
 			break;
 		
 		default:
-			$speech = <a href="https://drive.google.com/file/d/17Y58gSJ_v4m5iHPFLRMwJB3LE9TbuIJA/view">Descargar</a> "Sorry, I didnt get that. Please ask me something else.";
+			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}
 
