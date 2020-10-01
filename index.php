@@ -1,4 +1,12 @@
 <?php
+	$user = "root";
+	$pass = "";
+	$host = "localhost";
+
+	$connection = mysqli_connect($host, $user, $pass);
+    	$datab = "helpusercasa";
+    	$db = mysqli_select_db($connection,$datab);
+
 	$method = $_SERVER['REQUEST_METHOD'];
 
 	if($method == "POST")
@@ -20,8 +28,8 @@
 		}
 
 		$response = new \stdClass();
-		$response->speech="";
-		$response->displayText = "";
+		$response->speech=$speech;
+		$response->displayText = $speech;
 		$response->source = "webhook";
 		echo json_encode($response);
 	}
