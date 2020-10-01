@@ -31,7 +31,10 @@ if($method == 'POST'){
 			break;
 		
 		default:
-			$speech = "Sorry, I didnt get that. Please ask me something else.";
+			$sql = "SELECT documentoPreguntaCasa FROM preguntascasa WHERE idPreguntacasa = 1";
+			$result = $conn->query($sql);
+			
+			$speech = $result + "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}
 
