@@ -9,13 +9,6 @@
     	$datab = "helpusercasa";
     	$db = mysqli_select_db($connection,$datab);
 
-	$sql = "SELECT documentoPreguntaCasa FROM preguntascasa WHERE idPreguntacasa = 1";
-	$result = $connection->query($sql);
-	while($row = $result->fetch_assoc()) 
-	{
-		$doc = $row["documentoPreguntaCasa"];
- 	 }
-
 $method = $_SERVER['REQUEST_METHOD'];
 
 if($method == 'POST'){
