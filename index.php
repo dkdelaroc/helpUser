@@ -1,12 +1,4 @@
 <?php
-	$user = "root";
-	$pass = "";
-	$host = "localhost";
-
-	$connection = mysqli_connect($host, $user, $pass);
-    	$datab = "helpusercasa";
-    	$db = mysqli_select_db($connection,$datab);
-
 	$method = $_SERVER['REQUEST_METHOD'];
 
 	if($method == "POST")
