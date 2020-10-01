@@ -1,2 +1,0 @@
-# helpUser
-information for chatbot 
