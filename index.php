@@ -1,6 +1,6 @@
 <?php
 	
-	iclude("phpConnection.php");
+	include("phpConnection.php");
 
 	$method = $_SERVER['REQUEST_METHOD'];
 
