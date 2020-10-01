@@ -1,8 +1,16 @@
 <?php 
 
+	$user = "root";
+	$pass = "";
+	$host = "localhost";
+
+	$connection = mysqli_connect($host, $user, $pass);
+
+    	$datab = "helpusercasa";
+    	$db = mysqli_select_db($connection,$datab);
+
 $method = $_SERVER['REQUEST_METHOD'];
 
-// Process only when method is POST
 if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
