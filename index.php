@@ -1,33 +1,41 @@
-<?php
-	$method = $_SERVER['REQUEST_METHOD'];
+<?php 
 
-	if($method == "POST")
-	{
-		$requestBody = file_get_contents('php://input');
-		$json = json_decode($requestBody);
+$method = $_SERVER['REQUEST_METHOD'];
 
-		$text = $json->result->parameters->text;
+// Process only when method is POST
+if($method == 'POST'){
+	$requestBody = file_get_contents('php://input');
+	$json = json_decode($requestBody);
 
-		switch ($text) 
-		{
-			case 'Requisitos para darse de alta en el portal':
-					$speech =  "Favor de enviar su infomación en la platilla de correo electronico adjunto para su alta en el portal, gracias"
-				break;
-			
-			default:
-				 $speech = "Lo siento no comprendo su solicitud"
-				break;
-		}
+	$text = $json->result->parameters->text;
 
-		$response = new \stdClass();
-		$response->speech=$speech;
-		$response->displayText = $speech;
-		$response->source = "webhook";
-		echo json_encode($response);
+	switch ($text) {
+		case 'hi':
+			$speech = "Hi, Nice to meet you";
+			break;
+
+		case 'bye':
+			$speech = "Bye, good night";
+			break;
+
+		case 'anything':
+			$speech = "Yes, you can type anything here.";
+			break;
+		
+		default:
+			$speech = "Sorry, I didnt get that. Please ask me something else.";
+			break;
 	}
-	else
-	{
-		echo "Method not allowed";
-	}
- 
+
+	$response = new \stdClass();
+	$response->speech = $speech;
+	$response->displayText = $speech;
+	$response->source = "webhook";
+	echo json_encode($response);
+}
+else
+{
+	echo "Method not allowed";
+}
+
 ?>
