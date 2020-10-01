@@ -38,7 +38,7 @@ if($method == 'POST'){
 			break;
 		
 		default:
-			$speech = $doc + "Sorry, I didnt get that. Please ask me something else.";
+			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}
 
