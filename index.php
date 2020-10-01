@@ -18,8 +18,8 @@ if($method == 'POST'){
 	$text = $json->result->parameters->text;
 
 	switch ($text) {
-		case 'hi':
-			$speech = "Hi, Nice to meet you";
+		case 'alta':
+			$speech = "Favor de enviar su infomación en la platilla de correo electronico adjunto para su alta en el portal, gracias";
 			break;
 
 		case 'bye':
